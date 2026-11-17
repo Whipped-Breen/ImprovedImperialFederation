@@ -1,0 +1,54 @@
+on_actions = {
+	# country
+	#ROOT is winner #FROM gets annexed - This will also fire on_annex
+	on_civil_war_end = {
+		effect = {
+			if = {
+				limit = {
+					ENG = { has_completed_focus = ENG_appeal_to_imperial_loyalists }
+				}
+				random_country = {
+					limit = {
+						original_tag = CAN
+						has_government = neutrality
+					}
+					set_capital = { state = 276 remember_old_capital = no }
+				}
+				random_country = {
+					limit = {
+						original_tag = SAF
+						has_government = neutrality
+					}
+					set_capital = { state = 275 remember_old_capital = no }
+				}
+				random_country = {
+					limit = {
+						original_tag = AST
+						has_government = neutrality
+					}
+					set_capital = { state = 285 remember_old_capital = no }
+				}
+				random_country = {
+					limit = {
+						original_tag = AST
+						has_government = neutrality
+					}
+					set_capital = { state = 284 remember_old_capital = no }
+				}
+			}
+		}
+	}
+	on_puppet = {
+		effect = {
+			if = {
+				limit = {
+					FROM = { tag = ENG }
+				}
+				ROOT = {
+					set_cosmetic_tag = ENG_imperial_autonomy
+					retire_country_leader = yes
+				}
+			}
+		}
+	}
+}
