@@ -1,0 +1,14 @@
+﻿l_english:
+ CAN_north_america_dominion_autonomy_dominion:0 "Dominion of North America"
+ CAN_north_america_dominion_autonomy_dominion_def:0 "the Dominion of North America"
+ CAN_north_america_dominion_autonomy_colony:0 "United Provinces of America"
+ CAN_north_america_dominion_autonomy_colony_def:0 "the United Provinces of America"
+ CAN_north_america_dominion_autonomy_puppet:0 "British North American Territories"
+ CAN_north_america_dominion_autonomy_puppet_def:0 "the British North American Territories"
+ CAN_north_america_dominion_autonomy_integrated_puppet:0 "Imperialist North America"
+ CAN_north_america_dominion_autonomy_integrated_puppet_def:0 "Imperialist North America"
+ CAN_north_america_dominion_autonomy_integrated_puppet_adj:0 "Imperialist North American"
+ CAN_north_america_dominion_neutrality_adj:0 "North American"
+ CAN_north_america_dominion_fascism_adj:0 "North American"
+
+ ENG_reestablish_raj:0 "Re-establish the Raj"

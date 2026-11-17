@@ -1,0 +1,269 @@
+add_namespace = news
+
+# The Fall of Singapore
+news_event = {
+	id = news.117
+	title = news.117.t
+	desc = news.117.d
+	picture = GFX_news_event_038
+	
+	major = yes
+	
+	trigger = {
+		1021 = { 
+			controller = {
+				OR = {
+					original_tag = JAP
+					is_ally_with = JAP
+				}
+			}
+		}
+		OR = {
+			1021 = {
+				is_owned_by = ENG
+			}
+			MAL = {
+				is_subject_of = ENG
+				owns_state = 1021
+			}
+		}
+		JAP = { has_war_with = ENG }
+		NOT = { has_global_flag = fall_of_singapore }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_singapore
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = news.145.a
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = ENG
+				TAG = MAL
+			}
+		}
+	}
+	option = {
+		name = news.117.b
+		trigger = { 
+			TAG = JAP 
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = SEA_japan_news_events.03.a
+		trigger = { 
+			TAG = JAP 
+			has_government = communism
+		}
+	}
+	option = {
+		name = news.100.c
+		trigger = { 
+			OR = {
+				TAG = ENG 
+				TAG = MAL 
+			}
+		}
+	}
+}
+
+
+# The Fall of Sydney
+news_event = {
+	id = news.119
+	title = news.119.t
+	desc = news.119.d
+	picture = GFX_news_event_047
+	
+	major = yes
+	
+	trigger = {
+		285 = { is_controlled_by = JAP }
+		OR = {
+			285 = { is_owned_by = AST }
+			285 = { is_owned_by = ENG }
+		}
+		OR = {
+			JAP = { has_war_with = AST }
+			JAP = { has_war_with = ENG }
+		}
+		NOT = { has_global_flag = fall_of_sydney }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_sydney
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = news.145.a
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = AST
+				TAG = ENG
+			}
+		}
+	}
+	option = {
+		name = news.117.b
+		trigger = { TAG = JAP }
+	}
+	option = {
+		name = news.100.c
+		trigger = { 
+			OR = {
+				TAG = AST 
+				TAG = ENG 
+			}
+		}
+	}
+}
+
+
+# The Fall of Calcutta
+news_event = {
+	id = news.125
+	title = news.125.t
+	desc = news.125.d
+	picture = GFX_news_event_046
+	
+	major = yes
+	
+	trigger = {
+		431 = { is_controlled_by = JAP }
+		OR = {
+			431 = {
+				is_owned_by = ENG
+			}
+			431 = {
+				is_owned_by = RAJ
+			}
+		}
+		OR = {
+			JAP = { has_war_with = ENG }
+			JAP = { has_war_with = RAJ }
+		}
+		NOT = { has_global_flag = fall_of_calcutta }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_calcutta
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = news.145.a
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = ENG
+				TAG = RAJ
+			}
+		}
+	}
+	option = {
+		name = news.117.b
+		trigger = { TAG = JAP }
+	}
+	option = {
+		name = news.100.c
+		trigger = { 
+			OR = {
+				TAG = ENG 
+				TAG = RAJ 
+			}
+		}
+	}
+}
+
+
+# The Fall of New Delhi
+news_event = {
+	id = news.126
+	title = news.126.t
+	desc = news.126.d
+	picture = GFX_news_event_041
+	
+	major = yes
+	
+	trigger = {
+		439 = { 
+			controller = {
+				OR = {
+					original_tag = JAP
+					is_ally_with = JAP
+				}
+			}
+		}
+		OR = {
+			439 = {
+				is_owned_by = ENG
+			}
+			439 = {
+				is_owned_by = RAJ
+			}
+		}
+		JAP = { has_war_with = ENG }
+		NOT = { has_global_flag = fall_of_new_delhi }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_new_delhi
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = news.145.a
+		trigger = {
+			NOT = {
+				TAG = JAP
+				TAG = ENG
+				TAG = RAJ
+			}
+		}
+	}
+	option = {
+		name = news.117.b
+		trigger = { 
+			TAG = JAP 
+			NOT = {
+				has_government = communism
+			}
+		}
+	}
+	option = {
+		name = SEA_japan_news_events.03.a
+		trigger = { 
+			TAG = JAP 
+			has_government = communism
+		}
+	}
+	option = {
+		name = news.100.c
+		trigger = { 
+			OR = {
+				TAG = ENG 
+				TAG = RAJ 
+			}
+		}
+	}
+}
