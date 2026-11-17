@@ -9826,6 +9826,8 @@ political_actions = {
 						add_core_of = PREV
 						event_target:MTG_loyalist_canada = { transfer_state = PREV }
 					}
+					set_capital = { state = 360 }
+					USA = { every_scientist = { set_nationality = PREV } }
 				}
 				if = {
 					limit = {
@@ -9835,11 +9837,106 @@ political_actions = {
 					transfer_state = 332
 					transfer_state = 331
 				}
-				set_capital = { state = 360 }
 			}
 			hidden_effect = { news_event = { id = mtg_news.57 hours = 6 } }
 		}
 	}
+
+	ENG_reestablish_raj = {
+
+		icon = eng_install_government
+
+		allowed = {
+			tag = ENG
+		}
+		
+		available = {
+			OR = {
+				has_subject = RAJ
+				any_owned_state = {
+					is_core_of = RAJ
+					is_controlled_by = ENG
+				}
+			}
+		}
+
+		cost = 0
+
+		fire_only_once = yes
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		visible = {
+			OR = {
+				any_allied_country = {
+					original_tag = RAJ
+					is_subject_of = ROOT
+				}
+				any_owned_state = {
+					is_core_of = RAJ
+					is_controlled_by = ENG
+				}
+			}
+			RAJ = {
+				NOT = { has_cosmetic_tag = RAJ_UK }
+			}
+		}
+		
+		complete_effect = {
+			if = {
+				limit = {
+					NOT = { country_exists = RAJ }
+					any_owned_state = {
+						is_core_of = RAJ
+						is_controlled_by = ENG
+					}
+				}
+				release_puppet = RAJ
+			}
+			RAJ = {
+				add_state_core = 430
+				add_state_core = 787
+				transfer_state = 430
+				transfer_state = 733
+				every_state = {
+					limit = {
+						AND = {
+							is_owned_and_controlled_by = ENG
+							OR = {
+								is_core_of = PAK
+								is_core_of = SRL
+								is_core_of = MLD
+							}
+						}
+					}
+					RAJ = {
+						transfer_state = PREV
+					}
+				}
+				set_cosmetic_tag = RAJ_UK
+				hidden_effect = {
+					add_country_leader_role = {
+						character = "RAJ_v_d_savarkar"
+						promote_leader = yes
+						country_leader = {
+							ideology = despotism
+							expire = "1965.1.1.1"
+							traits = {}
+						}
+					}
+					if = {
+						limit = {
+							has_completed_focus = RAJ_swaraj
+						}
+						unlock_national_focus = RAJ_indian_national_congress
+					}
+				}
+			}
+		}
+	}
+	
 }
 
 operations = {

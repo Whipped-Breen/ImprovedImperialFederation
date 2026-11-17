@@ -6194,7 +6194,6 @@ focus_tree = {
 		prerequisite = { focus = uk_sanction_japan_focus }
 		prerequisite = { focus = ENG_sarawakrangers_focus }
 		prerequisite = { focus = ENG_east_indies_fleet_focus }
-		prerequisite = { focus = hk_air_focus }
 
 		icon = GFX_focus_attack_japan
 		x = 2
@@ -8874,35 +8873,37 @@ focus_tree = {
 			}
 			every_country_with_original_tag = {
 				original_tag_to_check = CAN
-				
-				every_unit_leader = {
-					set_nationality = ENG
-				}
-				ENG = {
-					annex_country = {
-						target = PREV
-						transfer_troops = yes
+				limit = {
+					OR = {
+						is_subject_of = ENG
+						exists = no
 					}
+				}
+				every_character = {
+					set_nationality = ENG
 				}
 				every_core_state = {
 					add_core_of = ENG
 				}
 			}
+			annex_country = {
+				target = CAN
+				transfer_troops = yes
+			}
 			every_country_with_original_tag = {
 				original_tag_to_check = SAF
-				
+				limit = {
+					OR = {
+						is_subject_of = ENG
+						exists = no
+					}
+				}
 				every_unit_leader = {
 					set_nationality = ENG
 				}
-				ENG = {
-					annex_country = {
-						target = PREV
-						transfer_troops = yes
-					}
-				}
 				if = {
 					limit = {
-						SAF = { has_completed_focus = SAF_police_windhoek }
+						has_completed_focus = SAF_police_windhoek
 					}
 					every_core_state = {
 						limit = {
@@ -8911,26 +8912,23 @@ focus_tree = {
 						add_core_of = ENG
 					}
 				}
-				else = {
-					every_core_state = {
-						add_core_of = ENG
-					}
-				}
+			}
+			annex_country = {
+				target = SAF
+				transfer_troops = yes
 			}
 			if = {
 				limit = {
 					RAJ = { has_country_flag = ENG_accepted_federation }
 				}
 				RAJ = {
-					every_unit_leader = {
+					every_character = {
 						set_nationality = ENG
 					}
 				}
-				ENG = {
-					annex_country = {
-						target = RAJ
-						transfer_troops = yes
-					}
+				annex_country = {
+					target = RAJ
+					transfer_troops = yes
 				}
 				if = {
 					limit = {
@@ -8949,47 +8947,48 @@ focus_tree = {
 						add_resistance = 15
 					}
 				}
-				every_core_state = {
-					limit = {
-						is_core_of = RAJ
-					}
-					add_core_of = ENG
-				}
 			}
 			every_country_with_original_tag = {
 				original_tag_to_check = AST
-				
-				every_unit_leader = {
-					set_nationality = ENG
-				}
-				ENG = {
-					annex_country = {
-						target = PREV
-						transfer_troops = yes
+				limit = {
+					OR = {
+						is_subject_of = ENG
+						exists = no
 					}
+				}
+				every_character = {
+					set_nationality = ENG
 				}
 				every_core_state = {
 					add_core_of = ENG
 				}
+			}
+			annex_country = {
+				target = AST
+				transfer_troops = yes
 			}
 			every_country_with_original_tag = {
 				original_tag_to_check = NZL
-				
-				every_unit_leader = {
-					set_nationality = ENG
-				}
-				ENG = {
-					annex_country = {
-						target = PREV
-						transfer_troops = yes
+				limit = {
+					OR = {
+						is_subject_of = ENG
+						exists = no
 					}
+				}
+				every_character = {
+					set_nationality = ENG
 				}
 				every_core_state = {
 					add_core_of = ENG
 				}
 			}
+			annex_country = {
+				target = NZL
+				transfer_troops = yes
+			}
 		}
 	}
+
 	### DEMOCRATIC BRANCH - STEADY AS SHE GOES ###
 
 	focus = {
